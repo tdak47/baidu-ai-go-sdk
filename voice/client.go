@@ -1,6 +1,6 @@
 package voice
 
-import "github.com/chenqinghe/baidu-ai-go-sdk"
+import gosdk "github.com/tdak47/baidu-ai-go-sdk"
 
 const (
 	B = 1 << (10 * iota)

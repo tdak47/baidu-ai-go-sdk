@@ -3,7 +3,7 @@ package ocr
 import (
 	"errors"
 
-	"github.com/chenqinghe/baidu-ai-go-sdk/vision"
+	"github.com/tdak47/baidu-ai-go-sdk/vision"
 )
 
 const (
@@ -29,24 +29,24 @@ const (
 	OCR_BUSINESS_LICENSE_URL       = "https://aip.baidubce.com/rest/2.0/ocr/v1/business_license"
 )
 
-//GeneralRecognizeBasic 通用文字识别
-//识别图片中的文字信息
+// GeneralRecognizeBasic 通用文字识别
+// 识别图片中的文字信息
 func (oc *OCRClient) GeneralRecognizeBasic(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_GENERAL_BASIC_URL, defaultGeneralBasicParams, params...)
 
 }
 
-//GeneralRecognizeWithLocation 通用文字识别（含位置信息）
-//识别图片中的文字信息（包含文字区域的坐标信息）
+// GeneralRecognizeWithLocation 通用文字识别（含位置信息）
+// 识别图片中的文字信息（包含文字区域的坐标信息）
 func (oc *OCRClient) GeneralRecognizeWithLocation(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_GENERAL_WITH_LOCATION_URL, defaultGeneralWithLocationParams, params...)
 
 }
 
-//GeneralRecognizeEnhanced 通用文字识别（含生僻字）
-//识别图片中的文字信息（包含对常见字和生僻字的识别）
+// GeneralRecognizeEnhanced 通用文字识别（含生僻字）
+// 识别图片中的文字信息（包含对常见字和生僻字的识别）
 //
 // Deprecated: 此API已失效，请使用AccurateRecognizeBasic代替
 func (oc *OCRClient) GeneralRecognizeEnhanced(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
@@ -55,56 +55,56 @@ func (oc *OCRClient) GeneralRecognizeEnhanced(image *vision.Image, params ...Req
 
 }
 
-//AccurateRecognizeBasic 通用文字识别(高精度版)
-//识别图片中的文字信息
+// AccurateRecognizeBasic 通用文字识别(高精度版)
+// 识别图片中的文字信息
 func (oc *OCRClient) AccurateRecognizeBasic(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_ACCURATE_BASIC_URL, defaultAccurateBasicParams, params...)
 
 }
 
-//AccurateRecognizeBasic 通用文字识别(高精度带位置版)
-//识别图片中的文字信息
+// AccurateRecognizeBasic 通用文字识别(高精度带位置版)
+// 识别图片中的文字信息
 func (oc *OCRClient) AccurateRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_ACCURATE_URL, defaultAccurateRecognizeParams, params...)
 
 }
 
-//HandWriting 手写体文字识别
-//识别图片中的手写文字信息 ref: https://ai.baidu.com/ai-doc/OCR/hk3h7y2qq
+// HandWriting 手写体文字识别
+// 识别图片中的手写文字信息 ref: https://ai.baidu.com/ai-doc/OCR/hk3h7y2qq
 func (oc *OCRClient) HandWriting(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_HANDWRITING_URL, defaultHandWritingParams, params...)
 
 }
 
-//WebImageRecognize 网络图片识别
-//识别一些网络上背景复杂，特殊字体的文字
+// WebImageRecognize 网络图片识别
+// 识别一些网络上背景复杂，特殊字体的文字
 func (oc *OCRClient) WebImageRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_WEBIMAGE_URL, defaultWebimgParams, params...)
 
 }
 
-//IdCardRecognize 身份证识别
-//识别身份证正反面的文字信息
+// IdCardRecognize 身份证识别
+// 识别身份证正反面的文字信息
 func (oc *OCRClient) IdCardRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_IDCARD_URL, defaultIdcardParams, params...)
 
 }
 
-//BankcardRecognize 银行卡识别
-//识别银行卡的卡号并返回发卡行和卡片性质信息
+// BankcardRecognize 银行卡识别
+// 识别银行卡的卡号并返回发卡行和卡片性质信息
 func (oc *OCRClient) BankcardRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_BANKCARD_URL, defaultBankcardParams, params...)
 
 }
 
-//DriverLicenseRecognize 驾驶证识别
-//识别机动车驾驶证所有关键字段
+// DriverLicenseRecognize 驾驶证识别
+// 识别机动车驾驶证所有关键字段
 func (oc *OCRClient) DriverLicenseRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_DRIVERLICENSE_URL, defaultDriverLicenseParams, params...)
@@ -120,39 +120,39 @@ func (oc *OCRClient) VehicleLicenseRecognize(image *vision.Image, params ...Requ
 
 }
 
-//LicensePlateRecognize 车牌识别
-//对小客车的车牌进行识别
+// LicensePlateRecognize 车牌识别
+// 对小客车的车牌进行识别
 func (oc *OCRClient) LicensePlateRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_LICENSEPLATE_URL, defaultLicensePlateParams, params...)
 
 }
 
-//FormDataRecognize 表格文字识别
-//自动识别表格线及表格内容，结构化输出表头、表尾及每个单元格的文字内容
+// FormDataRecognize 表格文字识别
+// 自动识别表格线及表格内容，结构化输出表头、表尾及每个单元格的文字内容
 func (oc *OCRClient) FormDataRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_FORM_URL, defaultFormParams, params...)
 
 }
 
-//VATInvoiceRecognize 增值税发票识别
+// VATInvoiceRecognize 增值税发票识别
 func (oc *OCRClient) VATInvoiceRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 	return oc.ocr(image, OCR_VAT_INVOICE_URL, defaultVATInvoiceParams, params...)
 
 }
 
-//营业执照识别
+// 营业执照识别
 func (oc *OCRClient) BusinessLicenseRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 	return oc.ocr(image, OCR_BUSINESS_LICENSE_URL, defaultBusinessLicenseParams, params...)
 }
 
-//车型识别识别
+// 车型识别识别
 func (oc *OCRClient) CarTypeRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 	return oc.ocr(image, OCR_CAR_TYPE_URL, defaultCarTypeParams, params...)
 }
 
-//Vin码识别
+// Vin码识别
 func (oc *OCRClient) VinRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 	return oc.ocr(image, OCR_VIN_URL, defaultVinParams, params...)
 }
@@ -164,12 +164,12 @@ func (oc *OCRClient) NumberRecognize(image *vision.Image, params ...RequestParam
 
 //TODO:通用票据识别
 
-//IocrRecognise 自定义模板文字识别
+// IocrRecognise 自定义模板文字识别
 func (oc *OCRClient) IocrRecognise(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 	return oc.ocr(image, OCR_IOCR_RECOGNISE_URL, defaultIocrRecogniseParams, params...)
 }
 
-//IocrRecogniseFinance 自定义模板文字识别  财会版
+// IocrRecogniseFinance 自定义模板文字识别  财会版
 func (oc *OCRClient) IocrRecogniseFinance(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 	return oc.ocr(image, OCR_IOCR_RECOGNISE_FINANCE_URL, defaultIocrRecogniseFinanceParams, params...)
 }

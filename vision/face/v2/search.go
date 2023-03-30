@@ -2,9 +2,10 @@ package v2
 
 import (
 	"fmt"
-	"github.com/chenqinghe/baidu-ai-go-sdk/vision"
-	"github.com/imroc/req"
 	"strings"
+
+	"github.com/imroc/req"
+	"github.com/tdak47/baidu-ai-go-sdk/vision"
 )
 
 const (

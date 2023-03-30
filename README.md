@@ -1,4 +1,4 @@
-# Baidu-ai-go-sdk   ![travis](https://travis-ci.org/chenqinghe/baidu-ai-go-sdk.svg?branch=develop)
+# Baidu-ai-go-sdk   ![travis](https://travis-ci.org/tdak47/baidu-ai-go-sdk.svg?branch=develop)
 基于百度REST API封装的go语言sdk，提供简易友好的接口，让开发变得简单。
 
 # Todo list
@@ -76,4 +76,4 @@
 
 
 # LISENCE
-the project is licensed under the [Apache License 2.0](https://github.com/chenqinghe/baidu-ai-go-sdk/blob/master/LICENSE) 
+the project is licensed under the [Apache License 2.0](https://github.com/tdak47/baidu-ai-go-sdk/blob/master/LICENSE) 

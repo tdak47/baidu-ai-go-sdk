@@ -1,8 +1,8 @@
 package v2
 
 import (
-	"github.com/chenqinghe/baidu-ai-go-sdk/vision"
 	"github.com/imroc/req"
+	"github.com/tdak47/baidu-ai-go-sdk/vision"
 )
 
 const (

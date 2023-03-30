@@ -1,6 +1,6 @@
 # Installation
 ```GO
-go get github.com/chenqinghe/baidu-ai-go-sdk/voice
+go get github.com/tdak47/baidu-ai-go-sdk/voice
 ```
 
 # Usage

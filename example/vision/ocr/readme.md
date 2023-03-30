@@ -1,6 +1,6 @@
 # Instanlation 
 ```Go
-go get github.com/chenqinghe/baidu-ai-go-sdk/vision/ocr
+go get github.com/tdak47/baidu-ai-go-sdk/vision/ocr
 ```
 # Usage
 - 创建client
