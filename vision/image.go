@@ -127,13 +127,13 @@ func MustFromBytes(bts []byte) *Image {
 }
 
 func FromUrl(link string) (*Image, error) {
-	u, err := url.Parse(link)
+	_, err := url.Parse(link)
 	if err != nil {
 		return nil, err
 	}
-	if u.Scheme == "https" {
-		return nil, errors.New("not support https scheme.")
-	}
+	// if u.Scheme == "https" {
+	// 	return nil, errors.New("not support https scheme.")
+	// }
 	return &Image{
 		Reader: nil,
 		Url:    link,
